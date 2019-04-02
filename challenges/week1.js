@@ -1,16 +1,15 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
   return word.charAt(0).toUpperCase()+word.slice(1)
-  // Add your code here!
+  
 }
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  let intials =[]; 
-  intials= firstName.charAt(0)+ "." +lastName.charAt(0)
+  let  intials= firstName.charAt(0)+ "." +lastName.charAt(0)
   return intials
-  // Add your code here!
+  
 }
 
 function addVAT(originalPrice, vatRate) {
@@ -18,16 +17,14 @@ function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error("vatRate is required");
   let  newPrice =originalPrice+ (originalPrice*vatRate /100)
   return parseFloat(newPrice.toFixed(2))
-  // Add your code here!
-}
+  }
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  let newPrice=0;
-     newPrice =originalPrice- (originalPrice*reduction /100)
+  let newPrice =originalPrice- (originalPrice*reduction /100)
   return parseFloat(newPrice.toFixed(2))
-  // Add your code here!
+  
 }
 
 function getMiddleCharacter(str) {
@@ -41,7 +38,7 @@ function getMiddleCharacter(str) {
   else
   return str[i/2-1]+str[i/2]
 
-  // Add your code here!
+  
 }
 
 function reverseWord(word) {
@@ -51,7 +48,7 @@ function reverseWord(word) {
         newString+=word[i];
     }
 return newString
-  // Add your code here!
+  
     
     
 }
@@ -61,17 +58,16 @@ function reverseAllWords(words) {
   let newStrings= []
   
    words.forEach(word => {
-     let newString =""
-     for (var i = word.length - 1; i >= 0; i--) 
-        newString+=word[i];   
+     let newString =reverseWord(word)
+     //for (var i = word.length - 1; i >= 0; i--) 
+       // newString+=word[i];   
     newStrings.push(newString)
     
   });
 
   
  return newStrings
-  // Add your code here!
-}
+  }
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
@@ -81,7 +77,7 @@ function countLinuxUsers(users) {
    count++; 
   });
   return count
-  // Add your code here!
+  
 }
 
 function getMeanScore(scores) {
@@ -98,7 +94,7 @@ mean=sum/i
 return parseFloat( mean.toFixed(2))
 
   
-  // Add your code here!
+  
 }
 
 function simpleFizzBuzz(n) {
@@ -112,7 +108,7 @@ function simpleFizzBuzz(n) {
   else
   return n
 
-  // Add your code here!
+  
 }
 
 module.exports = {
