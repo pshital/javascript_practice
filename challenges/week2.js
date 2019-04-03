@@ -14,18 +14,20 @@ function isFromManchester(person) {
 function getBusNumbers(people) {
   if (people === undefined) throw new Error("people is required");
   let n
-  if(people<=40)
-   n=1
-  else
-  { 
-   n=parseInt(people/40)+1
-  }
-   return n 
+  if ((people%40)==0)
+  console.log (Math.floor(people/40));
+else
+  console.log (Math.floor(people/40) +1)     
 }
 
 function countSheep(arr) {
   if (!arr) throw new Error("arr is required");
-  // Your code here!
+  for (i=0; i< arr.lenght; i++)
+  { let count
+    if(arr[i]=="sheep")
+     count+=count
+  }
+  retrun count;
 }
 
 function hasMPostCode(person) {
