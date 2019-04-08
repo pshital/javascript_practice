@@ -23,7 +23,7 @@ function getBusNumbers(people) {
 function countSheep(arr) {
   if (!arr) throw new Error("arr is required");
   let count=0
-  for (i=0; i< arr.length;i++)
+  for (let i=0; i< arr.length;i++)
   { 
     
     if(arr[i]==="sheep")
