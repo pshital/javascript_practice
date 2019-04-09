@@ -4,7 +4,11 @@ const {
   getTotalSubjects,
   checkIngredients,
   duplicateNumbers
-} = require("../challenges/week3");
+} = require("../challenges/week3");const people = [
+  { name: "Billy", subjects: ["welsh", "spanish"] },
+  { name: "Claude", subjects: ["chemistry", "biology", "music"] },
+  { name: "Aneeta", subjects: ["physics", "maths", "computing", "music"] }
+];
 
 describe("camelCaseWords", () => {
   test("camel cases a single word (i.e. no capital letter at beginning)", () => {
@@ -25,7 +29,7 @@ describe("camelCaseWords", () => {
   });
 });
 
-describe.only("getSquares", () => {
+describe("getSquares", () => {
   test("returns an empty array if empty array passed", () => {
     expect(getSquares([])).toEqual([]);
   });
