@@ -35,7 +35,7 @@ function findVerbs(words) {
   let verb = []
   for (let i = 0; i < words.length; i++) {
     let newarray = words[i].split(' ')
-    if (newarray[0]=="to")
+    if (newarray[0] == "to")
       verb.push(words[i])
   }
   return verb
@@ -65,12 +65,12 @@ function getSquareRoots(nums) {
   let squareArray = []
   for (let i = 0; i < nums.length; i++) {
     {
-      squareArray[i] = (Math.sqrt(nums[i]).toPrecision(3))
-      //squareArray[i] = parseFloat(squareArray[i])
-     //squareArray[i]= Number(squareArray[i])
+      squareArray[i] = (Math.sqrt(nums[i]))
+      if(!Number.isInteger(squareArray[i]))
+     {squareArray[i]=+squareArray[i].toFixed(2)}
     }
   }
-  return(squareArray)
+  return (squareArray)
 }
 
 function findSentencesContaining(sentences, str) {
