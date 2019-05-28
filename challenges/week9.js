@@ -40,11 +40,11 @@ const getComplementaryDNA = str => {
   let newArr = [];
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] == 'G') {
-      newArr.push( 'C');
+      newArr.push('C');
     }
 
     else if (arr[i] == 'C') {
-      newArr.push( 'G');
+      newArr.push('G');
     }
 
     else if (arr[i] == 'A') {
@@ -52,7 +52,7 @@ const getComplementaryDNA = str => {
     }
 
     else {
-      newArr.push( 'A');
+      newArr.push('A');
     }
   }
   return newArr;

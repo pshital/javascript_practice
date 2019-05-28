@@ -3,7 +3,15 @@
  * @param {Number} n
  */
 const sumDigits = n => {
-  if (n === undefined) throw new Error("n is required");
+  if (n === undefined) throw new Error("number is required");
+ // if (!Number.isNaN(n)) throw new Error("number is required");
+  var total =  0;
+            while (n>0)
+              {                  
+                 total += n%10;
+                 n= Math.floor(n/10)
+               }
+             return total;
 };
 
 /**
@@ -17,6 +25,14 @@ const sumDigits = n => {
 const createRange = (start, end, step) => {
   if (start === undefined) throw new Error("start is required");
   if (end === undefined) throw new Error("end is required");
+  let list = [];
+  if(step === undefined)
+  step=1;
+for (let i = start; i <= end;) {
+       list.push(i);
+    i=i+step;
+}
+return list
 };
 
 /**
@@ -51,6 +67,18 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+let userName =[];
+
+users.forEach(user =>{
+ let sum=0
+ for(let i=0;i<user.screentime.length;i++ ){
+   if(user.screentime[i].date===date){
+       
+       sum=user.screentime[i].usage.mapMyRun +user.screentime[i].usage.whatsApp+user.screentime[i].usage.facebook+user.screentime[i].usage.safari;
+ }
+}
+})
+
 };
 
 /**
@@ -65,6 +93,13 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = hexStr => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  let hex = hexStr.replace('#','');
+  let r = parseInt(hex.substring(0,2), 16);
+   let g = parseInt(hex.substring(2,4), 16);
+  let b = parseInt(hex.substring(4,6), 16);
+
+  let result = 'rgb('+r+','+g+','+b+')';
+  return result;
 };
 
 /**
@@ -79,6 +114,23 @@ const hexToRGB = hexStr => {
  */
 const findWinner = board => {
   if (board === undefined) throw new Error("board is required");
+  
+  const horizontal = [0,3,6].map(i=>{return[i,i+1,i+2]});
+  const vertical = [0,1,2].map(i=>{return[i,i+3,i+6]});
+  const diagonal = [[0,4,8],[2,4,6]];
+  
+  var allwins = [].concat(horizontal).concat(vertical).concat(diagonal);
+  
+  let res = allwins.some(indices => { 
+  return board[indices[0]] == "X" && board[indices[1]] == "X" && board[indices[2]] == "X"})
+ if(res===true)
+ return ("X has won");
+ res = allwins.some(indices => { 
+  return board[indices[0]] == "O" && board[indices[1]] == "O" && board[indices[2]] == "O"})
+ if(res===true)
+ return ("O has won");
+ if (res===false)
+return(null)
 };
 
 module.exports = {
